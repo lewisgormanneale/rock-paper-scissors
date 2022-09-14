@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <script>
+        function getComputerChoice() {
+            let ComputerChoice = Math.floor(Math.random() * 3) + 1;
+            console.log(ComputerChoice);
+            if (ComputerChoice === 1) {
+                return "Rock"
+            } else if (ComputerChoice === 2) {
+                return "Paper"
+            } else {
+                return "Scissors"
+            }
+        }
+
+        let computerSelection = getComputerChoice();
+        console.log(computerSelection);
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>
