@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-    <script>
-        let roundResult;
+let roundResult;
         let playerScore = 0;
         let computerScore = 0;
         
@@ -58,16 +51,13 @@
             }
         }
 
-        function game() {
+
+
+/*        function game() {
             for (let i = 0; i < 5; i++) {
                 playRound();
                 console.log(roundResult)
                 console.log(playerScore, computerScore);
             }
             console.log(`Final Score: Player - ${playerScore}, Computer - ${computerScore}`);
-        }
-    </script>
-</head>
-<body>
-</body>
-</html>
+        } */
