@@ -40,3 +40,15 @@ html {
 .button img {
     height: 300px;
 }
+
+#game-over-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.invisible {
+    visibility: hidden;
+}
