@@ -11,25 +11,32 @@
 </head>
 <body>
     <header id="header">
-        <h1>Rock Paper Scissors</h1>
+        <h1>Rock, Paper, Scissors!</h1>
     </header>
     <main>
-        <div id="scoreboard">
-            <p>First to score 5 points wins!</p>
-            <div id="player-score-message">Player Score = 0</div>
-            <div id="computer-score-message">Computer Score = 0</div>
-            <div>Last Round Result: <span id="last-round-result"></span></div>
+        <div id="start-screen">
+            <div id="game-start-window">
+                <p>First to score 5 points wins!</p>
+                <button id="start-button">Start Game</button>
+            </div>
         </div>
-        <div id="buttons">
-            <button id="rock-button" class="button">
-                <img src="images/rock.png">
-            </button>
-            <button id="paper-button" class="button">
-                <img src="images/paper.png">
-            </button>
-            <button id="scissors-button" class="button">
-                <img src="images/scissors.png">
-            </button>
+        <div id="game-screen" class="invisible">
+            <div id="scoreboard">
+                <div id="player-score-message">Player Score = 0</div>
+                <div id="computer-score-message">Computer Score = 0</div>
+                <div>Last Round Result: <span id="last-round-result"></span></div>
+            </div>
+            <div id="buttons">
+                <button id="rock-button" class="button">
+                    <img src="images/rock.png">
+                </button>
+                <button id="paper-button" class="button">
+                    <img src="images/paper.png">
+                </button>
+                <button id="scissors-button" class="button">
+                    <img src="images/scissors.png">
+                </button>
+            </div>
         </div>
         <div id="game-over-screen" class="invisible">
             <h2>Game Over!</h2>

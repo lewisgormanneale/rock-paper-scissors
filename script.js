@@ -8,9 +8,13 @@ let playerScoreMessage = document.querySelector('#player-score-message');
 let computerScoreMessage = document.querySelector('#computer-score-message');
 let lastRoundResult = document.querySelector('#last-round-result');
 
+const gameScreen = document.querySelector('#game-screen');
 const rockButton = document.querySelector('#rock-button');
 const paperButton = document.querySelector('#paper-button');
 const scissorsButton = document.querySelector('#scissors-button');
+
+const startScreen = document.querySelector('#start-screen');
+const startButton = document.querySelector('#start-button');
 
 const gameOverScreen = document.querySelector('#game-over-screen');
 const restartButton = document.querySelector('#restart-button');
@@ -92,10 +96,33 @@ function roundResultMessage(roundResult, playerSelection, computerSelection) {
     };
 };
 
-function gameOver(playerScore, computerScore) {
+startButton.addEventListener('click', startGame);
+
+function startGame() {
+    playerScore = 0;
+    computerScore = 0;
+    updateScores(playerScore, computerScore);
+    lastRoundResult.textContent = '';
+    enableButtons();
+    startScreen.classList.add('invisible');
+    gameScreen.classList.remove('invisible');
+    
+};
+
+function enableButtons() {
+    rockButton.disabled = false;
+    scissorsButton.disabled = false;
+    paperButton.disabled = false;
+}
+
+function disableButtons() {
     rockButton.disabled = true;
     scissorsButton.disabled = true;
     paperButton.disabled = true;
+}
+
+function gameOver(playerScore, computerScore) {
+    disableButtons();
     let winningPlayer = '';
     if (playerScore > computerScore) {
         winningPlayer = 'Player';
@@ -103,6 +130,7 @@ function gameOver(playerScore, computerScore) {
         winningPlayer = 'Computer';
     };
     gameOverScreen.classList.remove('invisible');
+    gameScreen.classList.add('invisible');
     finalResult.textContent = `Final Result: ${winningPlayer} wins!`;
 };
 
@@ -117,4 +145,5 @@ function restartGame() {
     scissorsButton.disabled = false;
     paperButton.disabled = false;
     gameOverScreen.classList.add('invisible');
+    gameScreen.classList.remove('invisible');
 };

@@ -1,17 +1,54 @@
 html {
     background-color: black;
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: 'Alice', serif;
 }
 
 #header {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    height: 10vh;
     color: white;
-    padding-bottom: 24px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#game-start-window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    padding: 40px;
+    color: white;
+    border: 5px solid black;
+}
+
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height:90vh;
+    position:absolute;
+    background-image: url(images/rps-background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height:90vh;
+    position:absolute
 }
 
 #scoreboard {
@@ -26,6 +63,7 @@ html {
 #buttons {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     width: 60%;
     margin: auto;
@@ -47,8 +85,17 @@ html {
     justify-content: center;
     align-items: center;
     color: white;
+    width: 100vw;
+    height:90vh;
+    position:absolute
 }
 
 .invisible {
     visibility: hidden;
+}
+
+@media screen and (max-width: 650px) {
+    #header {
+        font-size: 2vh;
+    }
 }
