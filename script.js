@@ -13,26 +13,24 @@ const scissorsButton = document.querySelector('#scissors-button');
 const gameOverScreen = document.querySelector('#game-over-screen')
 const finalResult = document.querySelector('#final-result')
 
-rockButton.addEventListener('click', () => {
-    console.log("rock clicked")
-    let playerSelection = "rock";
-    let computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+rockButton.addEventListener('click', function() {
+    choiceClicked('rock')
 });
 
-paperButton.addEventListener('click', () => {
-    console.log("paper clicked")
-    let playerSelection = "paper";
-    let computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+paperButton.addEventListener('click', function() {
+    choiceClicked('paper')
 });
 
-scissorsButton.addEventListener('click', () => {
-    console.log("scissors clicked")
-    let playerSelection = "scissors";
+scissorsButton.addEventListener('click', function() {
+    choiceClicked('scissors')
+});
+
+function choiceClicked(selection) {
+    let playerSelection = selection;
+    console.log(`${playerSelection} clicked`)
     let computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
-});
+}
 
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3) + 1;
