@@ -7,26 +7,51 @@ html {
     font-family: 'Alice', serif;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.window {
+    text-align: center;
+    border: 5px solid rgb(4, 4, 85);
+    color: white;
+    background-color: rgb(14, 14, 14);
+    box-sizing: border-box;
+}
+
 #header {
     display: flex;
-    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     height: 10vh;
-    color: white;
-    font-size: 2rem;
-    text-align: center;
+    width: 100%;
+    margin: 0;
 }
 
 #game-start-window {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(0, 0, 0);
-    padding: 40px;
+    justify-content: space-between;
     color: white;
-    border: 5px solid black;
+    text-align: center;
+    width: 30%;
+    height: auto;
+    padding: 40px;
 }
+
+#start-button, #restart-button {
+    background-color: rgb(4, 4, 85);
+    border: 1px solid white;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}        
 
 #start-screen {
     display: flex;
@@ -48,7 +73,10 @@ html {
     justify-content: center;
     width: 100vw;
     height:90vh;
-    position:absolute
+    position:absolute;
+    background-image: url(images/espoir-background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #scoreboard {
@@ -56,27 +84,29 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
     padding-bottom: 32px;
+    padding: 40px;
+    margin-top: 5vw;
+    font-size: x-large;
 }
 
 #buttons {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     width: 60%;
     margin: auto;
+    padding: 40px;
 }
 
 .button {
     margin: 0;
     padding: 0;
-    background-color: black;
+    border: 10px solid white;
 }
 
-.button img {
-    height: 300px;
+.button-image {
+    max-height: 300px;
 }
 
 #game-over-screen {
@@ -87,7 +117,11 @@ html {
     color: white;
     width: 100vw;
     height:90vh;
-    position:absolute
+    position:absolute;
+    font-size: x-large;
+    background-image: url(images/espoir-background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .invisible {
@@ -97,5 +131,15 @@ html {
 @media screen and (max-width: 650px) {
     #header {
         font-size: 2vh;
+    }
+    #buttons {
+        width: 80%;
+        flex-direction: column;
+    }
+    .button, .button-image {
+        max-width:230px;
+        max-height:95px;
+        width: auto;
+        height: auto;
     }
 }

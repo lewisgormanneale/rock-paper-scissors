@@ -10,38 +10,42 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <header id="header">
+    <header id="header" class="window">
         <h1>Rock, Paper, Scissors!</h1>
     </header>
     <main>
         <div id="start-screen">
-            <div id="game-start-window">
+            <div id="game-start-window" class="window">
                 <p>First to score 5 points wins!</p>
                 <button id="start-button">Start Game</button>
             </div>
         </div>
         <div id="game-screen" class="invisible">
-            <div id="scoreboard">
+            <div id="scoreboard" class="window">
                 <div id="player-score-message">Player Score = 0</div>
                 <div id="computer-score-message">Computer Score = 0</div>
                 <div>Last Round Result: <span id="last-round-result"></span></div>
             </div>
-            <div id="buttons">
+            <div id="buttons" class="window">
                 <button id="rock-button" class="button">
-                    <img src="images/rock.png">
+                    <img src="images/rock.png" class="button-image">
                 </button>
                 <button id="paper-button" class="button">
-                    <img src="images/paper.png">
+                    <img src="images/paper.png" class="button-image">
                 </button>
                 <button id="scissors-button" class="button">
-                    <img src="images/scissors.png">
+                    <img src="images/scissors.png" class="button-image">
                 </button>
             </div>
         </div>
         <div id="game-over-screen" class="invisible">
-            <h2>Game Over!</h2>
-            <p id="final-result"></p>
-            <button id="restart-button">Restart Game</button>
+            <h2 class="window">Game Over!</h2>
+            <img src="" id="victory-image">
+            <img src="" id="loss-image">
+            <div class="window">
+                <p id="final-result"></p>
+                <button id="restart-button">Restart Game</button>
+            </div>
         </div>
     </main>
     <script src="script.js"></script>
