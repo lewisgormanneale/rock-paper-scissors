@@ -12,8 +12,8 @@ const rockButton = document.querySelector('#rock-button');
 const paperButton = document.querySelector('#paper-button');
 const scissorsButton = document.querySelector('#scissors-button');
 
-const gameOverScreen = document.querySelector('#game-over-screen')
-const finalResult = document.querySelector('#final-result')
+const gameOverScreen = document.querySelector('#game-over-screen');
+const finalResult = document.querySelector('#final-result');
 
 rockButton.addEventListener('click', function() {
     choiceClicked(possibleChoices[0])
@@ -29,12 +29,12 @@ function choiceClicked(selection) {
     let playerSelection = selection;
     let computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
-}
+};
 
 function getComputerChoice() {
     let computerChoice = possibleChoices[Math.floor(Math.random() * 3)];
     return computerChoice;
-}
+};
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -74,7 +74,7 @@ function updateScores(playerScore, computerScore) {
     if (playerScore >= 5 || computerScore >= 5) {
         gameOver(playerScore, computerScore);
     }
-}
+};
 
 function roundResultMessage(roundResult, playerSelection, computerSelection) {
     let declaredRoundResult = roundResult;
@@ -103,4 +103,15 @@ function gameOver(playerScore, computerScore) {
     };
     gameOverScreen.classList.remove('invisible');
     finalResult.textContent = `Final Result: ${winningPlayer} wins!`;
+};
+
+function restartGame() {
+    playerScore = 0;
+    computerScore = 0;
+    updateScores(playerScore, computerScore);
+    lastRoundResult.textContent = '';
+    rockButton.disabled = false;
+    scissorsButton.disabled = false;
+    paperButton.disabled = false;
+    gameOverScreen.classList.add('invisible');
 };
