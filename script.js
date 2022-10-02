@@ -13,6 +13,7 @@ const paperButton = document.querySelector('#paper-button');
 const scissorsButton = document.querySelector('#scissors-button');
 
 const gameOverScreen = document.querySelector('#game-over-screen');
+const restartButton = document.querySelector('#restart-button');
 const finalResult = document.querySelector('#final-result');
 
 rockButton.addEventListener('click', function() {
@@ -104,6 +105,8 @@ function gameOver(playerScore, computerScore) {
     gameOverScreen.classList.remove('invisible');
     finalResult.textContent = `Final Result: ${winningPlayer} wins!`;
 };
+
+restartButton.addEventListener('click', restartGame);
 
 function restartGame() {
     playerScore = 0;
