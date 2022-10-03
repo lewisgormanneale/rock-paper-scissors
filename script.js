@@ -20,6 +20,12 @@ const rockButton = document.querySelector('#rock-button');
 const paperButton = document.querySelector('#paper-button');
 const scissorsButton = document.querySelector('#scissors-button');
 
+let playerImage = document.querySelector('#player-image');
+let computerImage = document.querySelector('#computer-image');
+
+let playerLastPlayed = document.querySelector('#player-last-played');
+let computerLastPlayed = document.querySelector('#computer-last-played');
+
 const startScreen = document.querySelector('#start-screen');
 const startButton = document.querySelector('#start-button');
 
@@ -99,6 +105,16 @@ function playRound(playerSelection, computerSelection) {
 function updateScores(playerScore, computerScore) {
     playerScoreMessage.textContent = `Player Score = ${playerScore}`;
     computerScoreMessage.textContent = `Computer Score = ${computerScore}`;
+    if (playerScore > computerScore) {
+        playerImage.src = 'images/player-winning.png';
+        computerImage.src = 'images/computer-losing.png';
+    } else if (computerScore > playerScore) {
+        playerImage.src = 'images/player-losing.png';
+        computerImage.src = 'images/computer-winning.png';
+    } else {
+        playerImage.src = 'images/player-neutral.png';
+        computerImage.src = 'images/computer-neutral.png';
+    };
     if (playerScore >= 5 || computerScore >= 5) {
         gameOver(playerScore, computerScore);
     }
