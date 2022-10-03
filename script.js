@@ -106,7 +106,6 @@ function startGame() {
     enableButtons();
     startScreen.classList.add('invisible');
     gameScreen.classList.remove('invisible');
-    
 };
 
 function enableButtons() {

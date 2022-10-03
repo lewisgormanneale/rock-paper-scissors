@@ -14,40 +14,61 @@
         <h1>Rock, Paper, Scissors!</h1>
     </header>
     <main>
-        <div id="start-screen">
-            <div id="game-start-window" class="window">
-                <p>First to score 5 points wins!</p>
-                <button id="start-button">Start Game</button>
+        <div id="background">
+            <div id="start-screen">
+                <div id="game-start-window" class="window">
+                    <p>First to score 5 points wins!</p>
+                        <label for="player-name">Enter Player Name:</label>
+                        <input type="text" id="player-name" name="player-name"></input>
+                        <button id="start-button">Start Game</button>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div id="game-screen" class="invisible">
-            <div id="scoreboard" class="window">
-                <div id="player-score-message">Player Score = 0</div>
-                <div id="computer-score-message">Computer Score = 0</div>
-                <div>Last Round Result: <span id="last-round-result"></span></div>
+            <div id="game-screen" class="invisible">
+                <div id="buttons" class="window">
+                    <button id="rock-button" class="button">
+                        <img src="images/rock.png" class="button-image">
+                    </button>
+                    <button id="paper-button" class="button">
+                        <img src="images/paper.png" class="button-image">
+                    </button>
+                    <button id="scissors-button" class="button">
+                        <img src="images/scissors.png" class="button-image">
+                    </button>
+                </div>
+                <div id="scoreboard">
+                    <div id="player-window" class="window">
+                        <img src="images/player-neutral.png" alt="player window" class="card-player">
+                        <div id="player-score-message">Player Score: 0</div>
+                    </div>
+                    <div id="results">
+                        <div>Last Round Result:</div>
+                        <div id="matchup">
+                            <img src="">
+                            <span id="last-round-result"></span>
+                            <img src="">
+                        </div>
+                    </div>
+                    <div id="computer-window" class="window">
+                        <img src="images/computer-neutral.png" alt="computer reaction" class="card-player">
+                        <div id="computer-score-message">Computer Score: 0</div>
+                    </div>
+                </div>
             </div>
-            <div id="buttons" class="window">
-                <button id="rock-button" class="button">
-                    <img src="images/rock.png" class="button-image">
-                </button>
-                <button id="paper-button" class="button">
-                    <img src="images/paper.png" class="button-image">
-                </button>
-                <button id="scissors-button" class="button">
-                    <img src="images/scissors.png" class="button-image">
-                </button>
-            </div>
-        </div>
-        <div id="game-over-screen" class="invisible">
-            <h2 class="window">Game Over!</h2>
-            <img src="" id="victory-image">
-            <img src="" id="loss-image">
-            <div class="window">
-                <p id="final-result"></p>
-                <button id="restart-button">Restart Game</button>
+            <div id="game-over-screen" class="invisible">
+                <h2 class="window">Game Over!</h2>
+                <img src="" id="victory-image">
+                <img src="" id="loss-image">
+                <div class="window">
+                    <p id="final-result"></p>
+                    <button id="restart-button">Restart Game</button>
+                </div>
             </div>
         </div>
     </main>
+    <footer id="footer" class="window">
+        <p>Testing</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
