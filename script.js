@@ -1,6 +1,13 @@
 let playerScore = 0;
 let computerScore = 0;
 
+let roundsPlayed = 0;
+let wins = 0;
+let draws = 0;
+let losses = 0;
+let userName = ""
+let userNameValid = false;
+
 let possibleChoices = ['rock', 'paper', 'scissors'];
 
 const scoreboard = document.querySelector('#scoreboard');
@@ -40,6 +47,22 @@ function getComputerChoice() {
     let computerChoice = possibleChoices[Math.floor(Math.random() * 3)];
     return computerChoice;
 };
+
+function getUserName()  {
+    let enteredName = ""
+    while (userNameValid === false) { 
+    enteredName = prompt(`Enter your Username under 10 characters and must start with a letter`)
+    if (enteredName.length < 11  && enteredName[0].match(/[a-z]/i)) {
+        userNameValid = true 
+        
+        capitalisedFirstLetter = enteredName[0].toUpperCase() 
+        capitalisedNotNameYet = enteredName.substring(1)
+        capitalisedEnteredName = capitalisedFirstLetter + capitalisedNotNameYet.toLowerCase()
+
+        return capitalisedEnteredName
+        }
+    }
+}
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {

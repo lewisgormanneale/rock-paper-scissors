@@ -21,7 +21,7 @@ body {
     box-sizing: border-box;
 }
 
-#header, #footer {
+#header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +35,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    height:90vh;
+    height:85vh;
     position:absolute;
 }
 
@@ -46,8 +46,8 @@ body {
     justify-content: space-between;
     color: white;
     text-align: center;
-    width: 30%;
-    height: auto;
+    width: 50vw;
+    height: 50vh;
     padding: 40px;
 }
 
@@ -68,7 +68,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height:90vh;
+    height:85vh;
     position:absolute;
 }
 
@@ -86,29 +86,35 @@ body {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height:90vh;
+    height: 85vh;
     position:absolute;
 }
 
 #buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 60%;
-    margin: auto;
-    padding: 20px;
-    margin-top: 10vw;
-    height: 40vw;
+    margin: 2vh auto 1vh;
+    height: 40vh;
+    max-width: 80vw;
 }
 
 .button {
-    margin: 0;
-    padding: 0;
-    border: 10px solid white;
+    margin: 20px;
+    display: inline-block;
+    background-color: rgb(4, 4, 85);
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    height: 30vh;
+    width: 20vh;
 }
 
 .button-image {
-    max-height: 300px;
+    height: 30vh;
+    width: 20vh;
 }
 
 #scoreboard {
@@ -116,21 +122,30 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 32px;
-    padding: 40px;
-    font-size: x-large;
-    width: 60%;
+    background-color: black;
+    height: 30vh;
+    width: auto;
 }
+
+#results {
+    width: 30vw;
+}
+
 #player-window, #computer-window {
-    width: 30%;
-    height: auto;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 20vw;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 1rem;
 }
 
 .card-player {
     border-radius: 50%;
-    max-width: 80%;
+    width: 10vw;
     height: auto;
 }
 
@@ -141,27 +156,23 @@ body {
     align-items: center;
     color: white;
     width: 100vw;
-    height:90vh;
+    height:85vh;
     position:absolute;
     font-size: x-large;
 }
 
-.invisible {
-    visibility: hidden;
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
-@media screen and (max-width: 650px) {
-    #header {
-        font-size: 2vh;
-    }
-    #buttons {
-        width: 80%;
-        flex-direction: column;
-    }
-    .button, .button-image {
-        max-width:230px;
-        max-height:95px;
-        width: auto;
-        height: auto;
-    }
+.invisible {
+    visibility: hidden;
 }
