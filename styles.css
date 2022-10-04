@@ -35,9 +35,13 @@ body {
     width: 100vw;
     height:85vh;
     position:absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-#game-start-window {
+#game-start-window, #game-over-window{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -157,8 +161,8 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    width: 100vw;
-    height:85vh;
+    width: 50vw;
+    height:50vh;
     position:absolute;
     font-size: x-large;
 }

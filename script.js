@@ -36,6 +36,9 @@ const gameOverScreen = document.querySelector('#game-over-screen');
 const restartButton = document.querySelector('#restart-button');
 const finalResult = document.querySelector('#final-result');
 
+let lossImage = document.querySelector('#loss-image');
+let winImage = document.querySelector('#win-image')
+
 rockButton.addEventListener('click', function() {
     choiceClicked(possibleChoices[0])
 });
@@ -178,8 +181,10 @@ function gameOver(playerScore, computerScore) {
     let winningPlayer = '';
     if (playerScore > computerScore) {
         winningPlayer = 'Player';
+        winImage.src = 'images/win-animation.gif'
     } else {
         winningPlayer = 'Computer';
+        lossImage.src = 'images/loss-animation.gif'
     };
     gameOverScreen.classList.remove('invisible');
     gameScreen.classList.add('invisible');
@@ -193,6 +198,8 @@ function restartGame() {
     computerScore = 0;
     playerLastPlayed.src = '';
     computerLastPlayed.src = '';
+    winImage.src = '';
+    lossImage.src = '';
     updateScores(playerScore, computerScore);
     lastRoundResult.textContent = '';
     rockButton.disabled = false;
