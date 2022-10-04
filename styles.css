@@ -11,7 +11,7 @@ body {
 
 .window {
     text-align: center;
-    border: 5px solid green;
+    border: 5px solid darkgreen;
     background-color: rgb(255, 255, 255);
     box-sizing: border-box;
 }
@@ -74,7 +74,7 @@ body {
 }
 
 #start-button, #restart-button {
-    background-color: rgb(4, 4, 85);
+    background-color: darkgreen;
     border: 1px solid white;
     color: white;
     padding: 15px 32px;
@@ -119,9 +119,15 @@ body {
     justify-content: center;
     align-items: center;
     margin: 2vh auto 1vh;
-    height: 20vh;
+    height: 80%;
+    width: 30%;
     font-size: 10vw;
-    background-color: white;
+    background-color: darkgreen;
+    border: 1px solid white;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
 }
 
 #scoreboard {
@@ -145,7 +151,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     font-size: 5vw;
 }
 
@@ -157,19 +163,19 @@ body {
 #player-window, #computer-window {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     width: 20vw;
     height: 100%;
 }
 
-.competitor-icon {
+#player-icon, #computer-icon {
     font-size: 10vw;
+    height: 50%;
 }
 
 .score-window {
     text-align: center;
-    border: 5px solid green;
     background-color: rgb(255, 255, 255);
     box-sizing: border-box;
 }
@@ -184,7 +190,6 @@ body {
     width: 50vw;
     height:80vh;
     position:absolute;
-    font-size: x-large;
 }
 
 #game-over-window{
@@ -208,9 +213,7 @@ body {
     font-size: x-large;
 }
 
-#game-over-window img {
-    height: 20vh;
-}
+/* footer */
 
 #footer {
     display: flex;

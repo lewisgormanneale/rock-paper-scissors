@@ -110,18 +110,30 @@ function updateScores(playerScore, computerScore) {
 function roundResultMessage(roundResult, playerSelection, computerSelection) {
     let declaredRoundResult = roundResult;
     if (playerSelection === possibleChoices[0]) {
-        playerLastPlayed.textContent = "✊";
+        playerLastPlayed.removeAttribute('class');
+        playerLastPlayed.classList.add('fa-solid');
+        playerLastPlayed.classList.add('fa-hand-back-fist');
     } else if (playerSelection === possibleChoices[1]) {
-        playerLastPlayed.textContent = "✋";
+        playerLastPlayed.removeAttribute('class');
+        playerLastPlayed.classList.add('fa-solid');
+        playerLastPlayed.classList.add('fa-hand');
     } else if (playerSelection === possibleChoices[2]) {
-        playerLastPlayed.textContent = "✌️";
+        playerLastPlayed.removeAttribute('class');
+        playerLastPlayed.classList.add('fa-solid');
+        playerLastPlayed.classList.add('fa-hand-scissors');
     };
     if (computerSelection === possibleChoices[0]) {
-        computerLastPlayed.textContent = "✊";
+        computerLastPlayed.removeAttribute('class');
+        computerLastPlayed.classList.add('fa-solid');
+        computerLastPlayed.classList.add('fa-hand-back-fist');
     } else if (computerSelection === possibleChoices[1]) {
-        computerLastPlayed.textContent = "✋";
+        computerLastPlayed.removeAttribute('class');
+        computerLastPlayed.classList.add('fa-solid');
+        computerLastPlayed.classList.add('fa-hand');
     } else if (computerSelection === possibleChoices[2]) {
-        computerLastPlayed.textContent = "✌️";
+        computerLastPlayed.removeAttribute('class');
+        computerLastPlayed.classList.add('fa-solid');
+        computerLastPlayed.classList.add('fa-hand-scissors');
     };
     if (declaredRoundResult === 'win') {
         let capitalisedPlayerSelection = playerSelection[0].toUpperCase() + playerSelection.substring(1);
@@ -178,8 +190,8 @@ restartButton.addEventListener('click', restartGame);
 function restartGame() {
     playerScore = 0;
     computerScore = 0;
-    playerLastPlayed.textContent = '';
-    computerLastPlayed.textContent = '';
+    playerLastPlayed.removeAttribute('class');
+    computerLastPlayed.removeAttribute('class');
     updateScores(playerScore, computerScore);
     lastRoundResult.textContent = '';
     rockButton.disabled = false;

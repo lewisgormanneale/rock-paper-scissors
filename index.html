@@ -32,13 +32,13 @@
             </div>
             <div id="game-screen" class="invisible">
                 <div id="buttons" class="window">
-                    <button id="rock-button">✊</button>
-                    <button id="paper-button">✋</button>
-                    <button id="scissors-button">✌️</button>
+                    <i class="fa-solid fa-hand-back-fist" id="rock-button"></i>
+                    <i class="fa-solid fa-hand" id="paper-button"></i>
+                    <i class="fa-solid fa-hand-scissors" id="scissors-button"></i>
                 </div>
                 <div id="scoreboard">
                     <div id="player-window" class="window">
-                        <span class="competitor-icon">🙂</span>
+                        <i class="fa-solid fa-user" id="player-icon"></i>
                         <div id="player-score-message" class="window, score-window">Player Score: 0</div>
                     </div>
                     <div id="results" class="window, competitor window">
@@ -48,13 +48,13 @@
                                 <p id="last-round-result"></p>
                             </div>
                             <div id="cards-played">
-                                <span id="player-last-played" class="last-played"></span>
-                                <span id="computer-last-played" class="last-played"></span>
+                                <i id="player-last-played"></i>
+                                <i id="computer-last-played"></i>
                             </div>
                         </div>
                     </div>
                     <div id="computer-window" class="window, competitor window">
-                        <span class="competitor-icon">🤖</span>
+                        <i class="fa-solid fa-robot" id="computer-icon"></i>
                         <div id="computer-score-message" class="window, score-window">Computer Score: 0</div>
                     </div>
                 </div>
