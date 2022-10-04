@@ -29,6 +29,13 @@
                     <button id="start-button">Start Game</button>
                     </form>
                 </div>
+                <div id="game-over-window" class="window invisible">
+                    <h2>Game Over!</h2>
+                    <div>
+                        <p id="final-result"></p>
+                        <button id="restart-button">Restart Game</button>
+                    </div>
+                </div>
             </div>
             <div id="game-screen" class="invisible">
                 <div id="buttons" class="window">
@@ -39,9 +46,9 @@
                 <div id="scoreboard">
                     <div id="player-window" class="window">
                         <i class="fa-solid fa-user" id="player-icon"></i>
-                        <div id="player-score-message" class="window, score-window">Player Score: 0</div>
+                        <div id="player-score-message" class="window score-window">Player Score: 0</div>
                     </div>
-                    <div id="results" class="window, competitor window">
+                    <div id="results" class="window competitor window">
                         <div>Last Round Result:</div>
                         <div id="matchup">
                             <div>
@@ -53,18 +60,9 @@
                             </div>
                         </div>
                     </div>
-                    <div id="computer-window" class="window, competitor window">
+                    <div id="computer-window" class="window competitor window">
                         <i class="fa-solid fa-robot" id="computer-icon"></i>
-                        <div id="computer-score-message" class="window, score-window">Computer Score: 0</div>
-                    </div>
-                </div>
-            </div>
-            <div id="game-over-screen" class="invisible">
-                <div id="game-over-window" class="window">
-                    <h2>Game Over!</h2>
-                    <div>
-                        <p id="final-result"></p>
-                        <button id="restart-button">Restart Game</button>
+                        <div id="computer-score-message" class="window score-window">Computer Score: 0</div>
                     </div>
                 </div>
             </div>

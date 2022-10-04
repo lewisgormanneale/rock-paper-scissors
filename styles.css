@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
+    box-sizing: border-box;
 }
 
 .invisible {
@@ -11,20 +12,9 @@ body {
 
 .window {
     text-align: center;
-    border: 5px solid darkgreen;
+    border: 5px solid black;
     background-color: rgb(255, 255, 255);
     box-sizing: border-box;
-}
-
-.button {
-    display: inline-block;
-    border: 5px solid black;
-    border-radius: 15%;
-    margin: 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20vh;
-    min-width: 20vh;
 }
 
 #header {
@@ -73,8 +63,19 @@ body {
     height: 40vh;
 }
 
+#game-over-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height:50vh;
+    position:absolute;
+    font-size: x-large;
+}
+
 #start-button, #restart-button {
-    background-color: darkgreen;
+    background-color: black;
     border: 1px solid white;
     color: white;
     padding: 15px 32px;
@@ -106,28 +107,18 @@ body {
 
 #buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    margin: 2vh auto 1vh;
     height: 30vh;
     width: 80vw;
-    background-color: white;
 }
 
 #rock-button, #paper-button, #scissors-button  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2vh auto 1vh;
-    height: 80%;
-    width: 30%;
+    height: 25vh;
+    width: 15%;
     font-size: 10vw;
-    background-color: darkgreen;
-    border: 1px solid white;
+    background-color: black;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    display: inline-block;
 }
 
 #scoreboard {
@@ -170,47 +161,13 @@ body {
 }
 
 #player-icon, #computer-icon {
-    font-size: 10vw;
-    height: 50%;
+    font-size: 15vh;
 }
 
 .score-window {
     text-align: center;
     background-color: rgb(255, 255, 255);
     box-sizing: border-box;
-}
-
-/* game over screen elements */
-
-#game-over-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-    height:80vh;
-    position:absolute;
-}
-
-#game-over-window{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    width: 50vw;
-    height: 50vh;
-}
-
-#game-over-window {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-    height:50vh;
-    position:absolute;
-    font-size: x-large;
 }
 
 /* footer */

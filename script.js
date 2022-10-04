@@ -27,9 +27,11 @@ let playerLastPlayed = document.querySelector('#player-last-played');
 let computerLastPlayed = document.querySelector('#computer-last-played');
 
 const startScreen = document.querySelector('#start-screen');
+const gameStartWindow = document.querySelector('#game-start-window');
 const startButton = document.querySelector('#start-button');
 
-const gameOverScreen = document.querySelector('#game-over-screen');
+
+const gameOverWindow = document.querySelector('#game-over-window');
 const restartButton = document.querySelector('#restart-button');
 const finalResult = document.querySelector('#final-result');
 
@@ -157,6 +159,7 @@ function startGame() {
     lastRoundResult.textContent = '';
     enableButtons();
     startScreen.classList.add('invisible');
+    gameStartWindow.classList.add('invisible');
     gameScreen.classList.remove('invisible');
 };
 
@@ -180,8 +183,9 @@ function gameOver(playerScore, computerScore) {
     } else {
         winningPlayer = 'Computer';
     };
-    gameOverScreen.classList.remove('invisible');
     gameScreen.classList.add('invisible');
+    startScreen.classList.remove('invisible');
+    gameOverWindow.classList.remove('invisible');
     finalResult.textContent = `Final Result: ${winningPlayer} wins!`;
 };
 
@@ -197,6 +201,6 @@ function restartGame() {
     rockButton.disabled = false;
     scissorsButton.disabled = false;
     paperButton.disabled = false;
-    gameOverScreen.classList.add('invisible');
+    gameOverWindow.classList.add('invisible');
     gameScreen.classList.remove('invisible');
 };
