@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap" rel="stylesheet">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
@@ -26,40 +26,36 @@
             </div>
             <div id="game-screen" class="invisible">
                 <div id="buttons" class="window">
-                    <button id="rock-button" class="button">
-                        <img src="images/rock.png" class="button-image">
-                    </button>
-                    <button id="paper-button" class="button">
-                        <img src="images/paper.png" class="button-image">
-                    </button>
-                    <button id="scissors-button" class="button">
-                        <img src="images/scissors.png" class="button-image">
-                    </button>
+                    <button id="rock-button" class="button">✊</button>
+                    <button id="paper-button" class="button">✋</button>
+                    <button id="scissors-button" class="button">✌️</button>
                 </div>
                 <div id="scoreboard">
                     <div id="player-window" class="window">
-                        <img src="images/player-neutral.png" alt="player window" id="player-image" class="card-player">
-                        <div id="player-score-message">Player Score: 0</div>
+                        <span class="competitor-icon">🙂</span>
+                        <div id="player-score-message" class="window, score-window">Player Score: 0</div>
                     </div>
-                    <div id="results" class="window">
+                    <div id="results" class="window, competitor window">
                         <div>Last Round Result:</div>
                         <div id="matchup">
-                            <img src="" id="player-last-played">
-                            <span id="last-round-result"></span>
-                            <img src="" id="computer-last-played">
+                            <div>
+                                <p id="last-round-result"></p>
+                            </div>
+                            <div id="cards-played">
+                                <span id="player-last-played" class="last-played"></span>
+                                <span id="computer-last-played" class="last-played"></span>
+                            </div>
                         </div>
                     </div>
-                    <div id="computer-window" class="window">
-                        <img src="images/computer-neutral.png" alt="computer reaction" id="computer-image" class="card-player">
-                        <div id="computer-score-message">Computer Score: 0</div>
+                    <div id="computer-window" class="window, competitor window">
+                        <span class="competitor-icon">🤖</span>
+                        <div id="computer-score-message" class="window, score-window">Computer Score: 0</div>
                     </div>
                 </div>
             </div>
             <div id="game-over-screen" class="invisible">
                 <div id="game-over-window" class="window">
                     <h2>Game Over!</h2>
-                    <img src="" id="win-image">
-                    <img src="" id="loss-image">
                     <div>
                         <p id="final-result"></p>
                         <button id="restart-button">Restart Game</button>

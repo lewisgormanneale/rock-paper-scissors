@@ -23,9 +23,6 @@ const rockButton = document.querySelector('#rock-button');
 const paperButton = document.querySelector('#paper-button');
 const scissorsButton = document.querySelector('#scissors-button');
 
-let playerImage = document.querySelector('#player-image');
-let computerImage = document.querySelector('#computer-image');
-
 let playerLastPlayed = document.querySelector('#player-last-played');
 let computerLastPlayed = document.querySelector('#computer-last-played');
 
@@ -35,9 +32,6 @@ const startButton = document.querySelector('#start-button');
 const gameOverScreen = document.querySelector('#game-over-screen');
 const restartButton = document.querySelector('#restart-button');
 const finalResult = document.querySelector('#final-result');
-
-let lossImage = document.querySelector('#loss-image');
-let winImage = document.querySelector('#win-image')
 
 rockButton.addEventListener('click', function() {
     choiceClicked(possibleChoices[0])
@@ -108,16 +102,6 @@ function playRound(playerSelection, computerSelection) {
 function updateScores(playerScore, computerScore) {
     playerScoreMessage.textContent = `Player Score = ${playerScore}`;
     computerScoreMessage.textContent = `Computer Score = ${computerScore}`;
-    if (playerScore > computerScore) {
-        playerImage.src = 'images/player-winning.png';
-        computerImage.src = 'images/computer-losing.png';
-    } else if (computerScore > playerScore) {
-        playerImage.src = 'images/player-losing.png';
-        computerImage.src = 'images/computer-winning.png';
-    } else {
-        playerImage.src = 'images/player-neutral.png';
-        computerImage.src = 'images/computer-neutral.png';
-    };
     if (playerScore >= 5 || computerScore >= 5) {
         gameOver(playerScore, computerScore);
     }
@@ -126,18 +110,18 @@ function updateScores(playerScore, computerScore) {
 function roundResultMessage(roundResult, playerSelection, computerSelection) {
     let declaredRoundResult = roundResult;
     if (playerSelection === possibleChoices[0]) {
-        playerLastPlayed.src = 'images/rock.png';
+        playerLastPlayed.textContent = "✊";
     } else if (playerSelection === possibleChoices[1]) {
-        playerLastPlayed.src = 'images/paper.png';
+        playerLastPlayed.textContent = "✋";
     } else if (playerSelection === possibleChoices[2]) {
-        playerLastPlayed.src = 'images/scissors.png';
+        playerLastPlayed.textContent = "✌️";
     };
     if (computerSelection === possibleChoices[0]) {
-        computerLastPlayed.src = 'images/rock.png';
+        computerLastPlayed.textContent = "✊";
     } else if (computerSelection === possibleChoices[1]) {
-        computerLastPlayed.src = 'images/paper.png';
+        computerLastPlayed.textContent = "✋";
     } else if (computerSelection === possibleChoices[2]) {
-        computerLastPlayed.src = 'images/scissors.png';
+        computerLastPlayed.textContent = "✌️";
     };
     if (declaredRoundResult === 'win') {
         let capitalisedPlayerSelection = playerSelection[0].toUpperCase() + playerSelection.substring(1);
@@ -181,10 +165,8 @@ function gameOver(playerScore, computerScore) {
     let winningPlayer = '';
     if (playerScore > computerScore) {
         winningPlayer = 'Player';
-        winImage.src = 'images/win-animation.gif'
     } else {
         winningPlayer = 'Computer';
-        lossImage.src = 'images/loss-animation.gif'
     };
     gameOverScreen.classList.remove('invisible');
     gameScreen.classList.add('invisible');
@@ -196,10 +178,8 @@ restartButton.addEventListener('click', restartGame);
 function restartGame() {
     playerScore = 0;
     computerScore = 0;
-    playerLastPlayed.src = '';
-    computerLastPlayed.src = '';
-    winImage.src = '';
-    lossImage.src = '';
+    playerLastPlayed.textContent = '';
+    computerLastPlayed.textContent = '';
     updateScores(playerScore, computerScore);
     lastRoundResult.textContent = '';
     rockButton.disabled = false;
