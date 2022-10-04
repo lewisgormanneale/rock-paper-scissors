@@ -125,8 +125,12 @@ body {
     width: auto;
 }
 
+#player-last-played, #computer-last-played {
+    width: 5vw;
+}
+
 #results {
-    width: 30vw;
+    width: 20vw;
 }
 
 #player-window, #computer-window {

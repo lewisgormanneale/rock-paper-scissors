@@ -10,6 +10,9 @@ let userNameValid = false;
 
 let possibleChoices = ['rock', 'paper', 'scissors'];
 
+let playerSelection = possibleChoices[0];
+let computerSelection = possibleChoices[0];
+
 const scoreboard = document.querySelector('#scoreboard');
 let playerScoreMessage = document.querySelector('#player-score-message');
 let computerScoreMessage = document.querySelector('#computer-score-message');
@@ -57,15 +60,12 @@ function getComputerChoice() {
 function getUserName()  {
     let enteredName = ""
     while (userNameValid === false) { 
-    enteredName = prompt(`Enter your Username under 10 characters and must start with a letter`)
     if (enteredName.length < 11  && enteredName[0].match(/[a-z]/i)) {
-        userNameValid = true 
-        
-        capitalisedFirstLetter = enteredName[0].toUpperCase() 
-        capitalisedNotNameYet = enteredName.substring(1)
-        capitalisedEnteredName = capitalisedFirstLetter + capitalisedNotNameYet.toLowerCase()
-
-        return capitalisedEnteredName
+        userNameValid = true;
+        capitalisedFirstLetter = enteredName[0].toUpperCase();
+        capitalisedNameRemainder = enteredName.substring(1);
+        capitalisedEnteredName = capitalisedFirstLetter + capitalisedNameRemainder.toLowerCase();
+        return capitalisedEnteredName;
         }
     }
 }
@@ -122,6 +122,20 @@ function updateScores(playerScore, computerScore) {
 
 function roundResultMessage(roundResult, playerSelection, computerSelection) {
     let declaredRoundResult = roundResult;
+    if (playerSelection === possibleChoices[0]) {
+        playerLastPlayed.src = 'images/rock.png';
+    } else if (playerSelection === possibleChoices[1]) {
+        playerLastPlayed.src = 'images/paper.png';
+    } else if (playerSelection === possibleChoices[2]) {
+        playerLastPlayed.src = 'images/scissors.png';
+    };
+    if (computerSelection === possibleChoices[0]) {
+        computerLastPlayed.src = 'images/rock.png';
+    } else if (computerSelection === possibleChoices[1]) {
+        computerLastPlayed.src = 'images/paper.png';
+    } else if (computerSelection === possibleChoices[2]) {
+        computerLastPlayed.src = 'images/scissors.png';
+    };
     if (declaredRoundResult === 'win') {
         let capitalisedPlayerSelection = playerSelection[0].toUpperCase() + playerSelection.substring(1);
         lastRoundResult.textContent = `You ${roundResult}! ${capitalisedPlayerSelection} beats ${computerSelection}.`;
@@ -177,6 +191,8 @@ restartButton.addEventListener('click', restartGame);
 function restartGame() {
     playerScore = 0;
     computerScore = 0;
+    playerLastPlayed.src = '';
+    computerLastPlayed.src = '';
     updateScores(playerScore, computerScore);
     lastRoundResult.textContent = '';
     rockButton.disabled = false;
