@@ -5,28 +5,42 @@ body {
     border: 0;
 }
 
+.invisible {
+    visibility: hidden;
+}
+
 .window {
     text-align: center;
-    border: 5px solid rgb(4, 4, 85);
-    color: black;
+    border: 5px solid green;
     background-color: rgb(255, 255, 255);
     box-sizing: border-box;
 }
 
-.invisible {
-    visibility: hidden;
+.button {
+    display: inline-block;
+    border: 5px solid black;
+    border-radius: 15%;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20vh;
+    min-width: 20vh;
 }
 
 #header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 10vh;
-    width: 100%;
-    margin: 0;
+    width: 100vw;
+    padding: 0 2vw;
 }
 
 #background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #e5e5f7;
     opacity: 0.8;
     background-image:  linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);
@@ -35,10 +49,6 @@ body {
     width: 100vw;
     height:85vh;
     position:absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 /* start screen elements */
@@ -49,7 +59,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height:85vh;
+    height:80vh;
     position:absolute;
 }
 
@@ -57,11 +67,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center;
     width: 50vw;
-    height: 50vh;
-};
+    height: 40vh;
+}
 
 #start-button, #restart-button {
     background-color: rgb(4, 4, 85);
@@ -72,7 +82,7 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-}        
+}
 
 #name-form {
     display: flex;
@@ -88,9 +98,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100vw;
-    height: 85vh;
+    height: 80vh;
     position:absolute;
 }
 
@@ -99,21 +109,19 @@ body {
     justify-content: center;
     align-items: center;
     margin: 2vh auto 1vh;
-    height: 40vh;
+    height: 30vh;
     width: 80vw;
     background-color: white;
 }
 
-.button {
-    display: inline-block;
-    border: 5px solid black;
-    border-radius: 15%;
-    margin: 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20vh;
-    height: 30vh;
-    min-width: 20vh;
+#rock-button, #paper-button, #scissors-button  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2vh auto 1vh;
+    height: 20vh;
+    font-size: 10vw;
+    background-color: white;
 }
 
 #scoreboard {
@@ -133,8 +141,12 @@ body {
     height: 100%;
 }
 
-.last-played {
-    width: 20vw;
+#cards-played {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 5vw;
 }
 
 #results {
@@ -155,6 +167,13 @@ body {
     font-size: 10vw;
 }
 
+.score-window {
+    text-align: center;
+    border: 5px solid green;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
 /* game over screen elements */
 
 #game-over-screen {
@@ -163,7 +182,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 50vw;
-    height:50vh;
+    height:80vh;
     position:absolute;
     font-size: x-large;
 }
@@ -203,10 +222,4 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-};
-
-@media screen and (max-width: 600px) {
-    #scoreboard {
-      flex-direction: column;
-    };
-  };
+}

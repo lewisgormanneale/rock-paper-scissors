@@ -7,28 +7,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e4de2803d7.js" crossorigin="anonymous"></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
     <header id="header" class="window">
+        <button><i class="fa-regular fa-hand-spock"></i></button>
         <h1>Rock, Paper, Scissors!</h1>
+        <button><i class="fa-solid fa-moon"></i></button>
     </header>
     <main>
+        </div>
         <div id="background">
             <div id="start-screen">
                 <div id="game-start-window" class="window">
                     <p>First to score 5 points wins!</p>
+                    <div>
                         <label for="player-name">Enter Player Name (must be under 10 characters and start with a letter):</label>
                         <input type="text" id="player-name" name="player-name"></input>
-                        <button id="start-button">Start Game</button>
+                    </div>
+                    <button id="start-button">Start Game</button>
                     </form>
                 </div>
             </div>
             <div id="game-screen" class="invisible">
                 <div id="buttons" class="window">
-                    <button id="rock-button" class="button">✊</button>
-                    <button id="paper-button" class="button">✋</button>
-                    <button id="scissors-button" class="button">✌️</button>
+                    <button id="rock-button">✊</button>
+                    <button id="paper-button">✋</button>
+                    <button id="scissors-button">✌️</button>
                 </div>
                 <div id="scoreboard">
                     <div id="player-window" class="window">
