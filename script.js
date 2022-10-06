@@ -1,39 +1,38 @@
 let playerScore = 0;
-let computerScore = 0;
+let cpuScore = 0;
 
 let roundsPlayed = 0;
 let wins = 0;
 let draws = 0;
 let losses = 0;
-let userName = ""
+let userName = "";
 let userNameValid = false;
 
 let possibleChoices = ['rock', 'paper', 'scissors'];
 
 let playerSelection = possibleChoices[0];
-let computerSelection = possibleChoices[0];
+let cpuSelection = possibleChoices[0];
+
+const gameStartWindow = document.querySelector('#game-start-window');
+const startMessage = document.querySelector('#start-message');
+const startButton = document.querySelector('#start-button');
+startButton.addEventListener('click', startGame);
 
 const scoreboard = document.querySelector('#scoreboard');
 let playerScoreMessage = document.querySelector('#player-score-message');
-let computerScoreMessage = document.querySelector('#computer-score-message');
+let cpuScoreMessage = document.querySelector('#cpu-score-message');
 let lastRoundResult = document.querySelector('#last-round-result');
+let playerLastPlayed = document.querySelector('#player-last-played');
+let cpuLastPlayed = document.querySelector('#cpu-last-played');
 
-const gameScreen = document.querySelector('#game-screen');
+const gameOverMessage = document.querySelector('#game-over-message');
+const restartButton = document.querySelector('#restart-button');
+const finalResult = document.querySelector('#final-result');
+
+const matchWindow = document.querySelector('#match-window');
 const rockButton = document.querySelector('#rock-button');
 const paperButton = document.querySelector('#paper-button');
 const scissorsButton = document.querySelector('#scissors-button');
-
-let playerLastPlayed = document.querySelector('#player-last-played');
-let computerLastPlayed = document.querySelector('#computer-last-played');
-
-const startScreen = document.querySelector('#start-screen');
-const gameStartWindow = document.querySelector('#game-start-window');
-const startButton = document.querySelector('#start-button');
-
-
-const gameOverWindow = document.querySelector('#game-over-window');
-const restartButton = document.querySelector('#restart-button');
-const finalResult = document.querySelector('#final-result');
 
 rockButton.addEventListener('click', function() {
     choiceClicked(possibleChoices[0])
@@ -47,17 +46,18 @@ scissorsButton.addEventListener('click', function() {
 
 function choiceClicked(selection) {
     let playerSelection = selection;
-    let computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+    let cpuSelection = getCpuChoice();
+    playRound(playerSelection, cpuSelection);
 };
 
-function getComputerChoice() {
-    let computerChoice = possibleChoices[Math.floor(Math.random() * 3)];
-    return computerChoice;
+function getCpuChoice() {
+    let cpuChoice = possibleChoices[Math.floor(Math.random() * 3)];
+    return cpuChoice;
 };
 
 function getUserName()  {
-    let enteredName = ""
+    let nameEntry = document.querySelector('#name-entry')
+    let enteredName = nameEntry.value;
     while (userNameValid === false) { 
     if (enteredName.length < 11  && enteredName[0].match(/[a-z]/i)) {
         userNameValid = true;
@@ -69,47 +69,47 @@ function getUserName()  {
     }
 }
 
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
+function playRound(playerSelection, cpuSelection) {
+    if (playerSelection === cpuSelection) {
         roundResult = 'draw';
     } else if (playerSelection === possibleChoices[0]) {
-        if (computerSelection === possibleChoices[1]) {
+        if (cpuSelection === possibleChoices[1]) {
             roundResult = 'lose';
-            computerScore++;
+            cpuScore++;
         } else {
             roundResult = 'win';
             playerScore++;
         };
     } else if (playerSelection === possibleChoices[1]) {
-        if (computerSelection === possibleChoices[2]) {
+        if (cpuSelection === possibleChoices[2]) {
             roundResult = 'lose';
-            computerScore++;
+            cpuScore++;
         } else {
             roundResult = 'win';
             playerScore++;
         };
     } else if (playerSelection === possibleChoices[2]) {
-        if (computerSelection === possibleChoices[0]) {
+        if (cpuSelection === possibleChoices[0]) {
             roundResult = 'lose';
-            computerScore++;
+            cpuScore++;
         } else {
             roundResult = 'win';
             playerScore++;
         };
     };
-    updateScores(playerScore, computerScore);
-    roundResultMessage(roundResult, playerSelection, computerSelection);
+    updateScores(playerScore, cpuScore);
+    roundResultMessage(roundResult, playerSelection, cpuSelection);
 };
 
-function updateScores(playerScore, computerScore) {
-    playerScoreMessage.textContent = `Player Score = ${playerScore}`;
-    computerScoreMessage.textContent = `Computer Score = ${computerScore}`;
-    if (playerScore >= 5 || computerScore >= 5) {
-        gameOver(playerScore, computerScore);
+function updateScores(playerScore, cpuScore) {
+    playerScoreMessage.textContent = `${userName} Score: ${playerScore}`;
+    cpuScoreMessage.textContent = `CPU Score: ${cpuScore}`;
+    if (playerScore >= 5 || cpuScore >= 5) {
+        gameOver(playerScore, cpuScore);
     }
 };
 
-function roundResultMessage(roundResult, playerSelection, computerSelection) {
+function roundResultMessage(roundResult, playerSelection, cpuSelection) {
     let declaredRoundResult = roundResult;
     if (playerSelection === possibleChoices[0]) {
         playerLastPlayed.removeAttribute('class');
@@ -124,43 +124,47 @@ function roundResultMessage(roundResult, playerSelection, computerSelection) {
         playerLastPlayed.classList.add('fa-solid');
         playerLastPlayed.classList.add('fa-hand-scissors');
     };
-    if (computerSelection === possibleChoices[0]) {
-        computerLastPlayed.removeAttribute('class');
-        computerLastPlayed.classList.add('fa-solid');
-        computerLastPlayed.classList.add('fa-hand-back-fist');
-    } else if (computerSelection === possibleChoices[1]) {
-        computerLastPlayed.removeAttribute('class');
-        computerLastPlayed.classList.add('fa-solid');
-        computerLastPlayed.classList.add('fa-hand');
-    } else if (computerSelection === possibleChoices[2]) {
-        computerLastPlayed.removeAttribute('class');
-        computerLastPlayed.classList.add('fa-solid');
-        computerLastPlayed.classList.add('fa-hand-scissors');
+    if (cpuSelection === possibleChoices[0]) {
+        cpuLastPlayed.removeAttribute('class');
+        cpuLastPlayed.classList.add('fa-solid');
+        cpuLastPlayed.classList.add('fa-hand-back-fist');
+    } else if (cpuSelection === possibleChoices[1]) {
+        cpuLastPlayed.removeAttribute('class');
+        cpuLastPlayed.classList.add('fa-solid');
+        cpuLastPlayed.classList.add('fa-hand');
+    } else if (cpuSelection === possibleChoices[2]) {
+        cpuLastPlayed.removeAttribute('class');
+        cpuLastPlayed.classList.add('fa-solid');
+        cpuLastPlayed.classList.add('fa-hand-scissors');
     };
     if (declaredRoundResult === 'win') {
         let capitalisedPlayerSelection = playerSelection[0].toUpperCase() + playerSelection.substring(1);
-        lastRoundResult.textContent = `You ${roundResult}! ${capitalisedPlayerSelection} beats ${computerSelection}.`;
+        lastRoundResult.textContent = `You ${roundResult}! ${capitalisedPlayerSelection} beats ${cpuSelection}.`;
     } else if (declaredRoundResult === 'lose') {
-        let capitalisedComputerSelection = computerSelection[0].toUpperCase() + computerSelection.substring(1);
-        lastRoundResult.textContent = `You ${roundResult}! ${capitalisedComputerSelection} beats ${playerSelection}.`;
+        let capitalisedCpuSelection = cpuSelection[0].toUpperCase() + cpuSelection.substring(1);
+        lastRoundResult.textContent = `You ${roundResult}! ${capitalisedCpuSelection} beats ${playerSelection}.`;
     } else if (declaredRoundResult === 'draw') {
-        lastRoundResult.textContent = `It's a ${roundResult}! Both players played ${computerSelection}.`;
+        lastRoundResult.textContent = `It's a ${roundResult}! Both players played ${cpuSelection}.`;
     } else  {
         lastRoundResult.textContent = 'Error!';
     };
 };
 
-startButton.addEventListener('click', startGame);
+// start game functions
+
 
 function startGame() {
-    playerScore = 0;
-    computerScore = 0;
-    updateScores(playerScore, computerScore);
-    lastRoundResult.textContent = '';
-    enableButtons();
-    startScreen.classList.add('invisible');
-    gameStartWindow.classList.add('invisible');
-    gameScreen.classList.remove('invisible');
+    userName = getUserName();
+    if (userName != "") {
+        playerScore = 0;
+        cpuScore = 0;
+        updateScores(playerScore, cpuScore);
+        lastRoundResult.textContent = '';
+        enableButtons();
+        startMessage.classList.add('invisible');
+        matchWindow.classList.remove('invisible');
+        scoreboard.classList.remove('invisible');
+    }
 };
 
 function enableButtons() {
@@ -175,17 +179,17 @@ function disableButtons() {
     paperButton.disabled = true;
 }
 
-function gameOver(playerScore, computerScore) {
+function gameOver(playerScore, cpuScore) {
     disableButtons();
     let winningPlayer = '';
-    if (playerScore > computerScore) {
-        winningPlayer = 'Player';
+    if (playerScore > cpuScore) {
+        winningPlayer = `${userName}`;
     } else {
-        winningPlayer = 'Computer';
+        winningPlayer = 'CPU';
     };
-    gameScreen.classList.add('invisible');
-    startScreen.classList.remove('invisible');
-    gameOverWindow.classList.remove('invisible');
+    matchWindow.classList.add('invisible');
+    scoreboard.classList.add('invisible');
+    gameOverMessage.classList.remove('invisible');
     finalResult.textContent = `Final Result: ${winningPlayer} wins!`;
 };
 
@@ -193,14 +197,15 @@ restartButton.addEventListener('click', restartGame);
 
 function restartGame() {
     playerScore = 0;
-    computerScore = 0;
+    cpuScore = 0;
     playerLastPlayed.removeAttribute('class');
-    computerLastPlayed.removeAttribute('class');
-    updateScores(playerScore, computerScore);
+    cpuLastPlayed.removeAttribute('class');
+    updateScores(playerScore, cpuScore);
     lastRoundResult.textContent = '';
     rockButton.disabled = false;
     scissorsButton.disabled = false;
     paperButton.disabled = false;
-    gameOverWindow.classList.add('invisible');
-    gameScreen.classList.remove('invisible');
+    gameOverMessage.classList.add('invisible');
+    scoreboard.classList.remove('invisible');
+    matchWindow.classList.remove('invisible');
 };

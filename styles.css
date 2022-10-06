@@ -1,20 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+.invisible {
+    display: none !important;
+}
+
 body {
     font-family: 'Gemunu Libre', sans-serif;
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border-box;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-.window {
-    text-align: center;
-    border: 5px solid black;
-    background-color: rgb(255, 255, 255);
-    box-sizing: border-box;
 }
 
 #header {
@@ -22,164 +18,183 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 10vh;
-    width: 100vw;
+    width: 100%;
     padding: 0 2vw;
-}
-
-#background {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #e5e5f7;
-    opacity: 0.8;
-    background-image:  linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);
-    background-size: 20px 35px;
-    background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
-    width: 100vw;
-    height:85vh;
-    position:absolute;
-}
-
-/* start screen elements */
-
-#start-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height:80vh;
-    position:absolute;
-}
-
-#game-start-window {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-    width: 50vw;
-    height: 40vh;
-}
-
-#game-over-window {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-    height:50vh;
-    position:absolute;
-    font-size: x-large;
-}
-
-#start-button, #restart-button {
     background-color: black;
-    border: 1px solid white;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
 }
-
-#name-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 30px;
-}
-
-/* game screen elements */
 
 #game-screen {
+    position:absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    width: 100vw;
-    height: 80vh;
+    width: 100%;
+    height: 85vh;
+}
+
+/* game message module */
+
+#message-window {
     position:absolute;
-}
-
-#buttons {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 30vh;
-    width: 80vw;
+    text-align: center;
+    height: 15vh;
+    width: 100%;
+    
+    background-color: grey;
 }
 
-#rock-button, #paper-button, #scissors-button  {
-    height: 25vh;
-    width: 15%;
-    font-size: 10vw;
-    background-color: black;
+#scoreboard, #game-over-message, #start-message {
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+}
+
+/* match elements */
+
+#match-window {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+    top: 15vh;
+}
+
+#player-window, #cpu-window {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#player-window{
+    background-color: white;
+    width: 67%;
+}
+
+#cpu-window {
+    width: 33%;
+    background-color: #e5e5f7;
+    opacity: 1;
+    background-image:  linear-gradient(#626262 2px, transparent 2px), linear-gradient(90deg, #626262 2px, transparent 2px), linear-gradient(#626262 1px, transparent 1px), linear-gradient(90deg, #626262 1px, #e5e5f7 1px);
+    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+.info-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    padding: 10%;
+}
+
+.player-info-card {
+    background-color: orange;
+}
+
+.cpu-info-card {
+    background-color: darkblue;
     color: white;
 }
 
-#scoreboard {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 30vh;
-    width: 80vw;
+#player-icon, #cpu-icon {
+    font-size: 10vh;
 }
 
-#matchup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 100%;
-}
+/* move cards */
 
-#cards-played {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 5vw;
-}
-
-#results {
-    width: 20vw;
-    height: 100%;
-}
-
-#player-window, #computer-window {
+.buttons {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
-    width: 20vw;
     height: 100%;
+    width:50%;
 }
 
-#player-icon, #computer-icon {
-    font-size: 15vh;
-}
-
-.score-window {
+.move-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    font-size: 10vh;
     text-align: center;
-    background-color: rgb(255, 255, 255);
-    box-sizing: border-box;
+}
+
+.player-move-card {
+    background-color: orange;
+}
+
+.cpu-move-card {
+    background-color: black;
+    color: grey;
+}
+
+.player-move-card i {
+    transform: rotate(90deg);
+}
+
+.cpu-move-card i {
+    transform: rotate(-90deg);
+}
+
+.previous-move-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    font-size: 10vh;
+    text-align: center;
 }
 
 /* footer */
 
 #footer {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 5vh;
     width: 100%;
-    margin: 0;
-    position: absolute;
     left: 0;
     bottom: 0;
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width: 500px) {
+    #player-window {
+        flex-direction: column-reverse;
+    }
+    #player-icon, #computer-icon {
+        font-size: 10vh;
+    }
+    #computer-window {
+        flex-direction: column;
+    }
 }

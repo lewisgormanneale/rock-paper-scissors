@@ -8,67 +8,81 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e4de2803d7.js" crossorigin="anonymous"></script>
-    <title>Rock Paper Scissors</title>
+    <title>Rock, Paper, Scissors!</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
-    <header id="header" class="window">
+    <header id="header">
         <button><i class="fa-regular fa-hand-spock"></i></button>
         <h1>Rock, Paper, Scissors!</h1>
         <button><i class="fa-solid fa-moon"></i></button>
     </header>
     <main>
-        </div>
-        <div id="background">
-            <div id="start-screen">
-                <div id="game-start-window" class="window">
+        <div id="game-screen">
+            <div id="message-window">
+                <div id="start-message">
                     <p>First to score 5 points wins!</p>
-                    <div>
-                        <label for="player-name">Enter Player Name (must be under 10 characters and start with a letter):</label>
-                        <input type="text" id="player-name" name="player-name"></input>
-                    </div>
+                    <label for="player-name">Enter Player Name (must be under 10 characters and start with a letter):</label>
+                    <input type="text" id="name-entry" name="player-name"></input>
                     <button id="start-button">Start Game</button>
-                    </form>
                 </div>
-                <div id="game-over-window" class="window invisible">
-                    <h2>Game Over!</h2>
-                    <div>
-                        <p id="final-result"></p>
-                        <button id="restart-button">Restart Game</button>
-                    </div>
-                </div>
-            </div>
-            <div id="game-screen" class="invisible">
-                <div id="buttons" class="window">
-                    <i class="fa-solid fa-hand-back-fist" id="rock-button"></i>
-                    <i class="fa-solid fa-hand" id="paper-button"></i>
-                    <i class="fa-solid fa-hand-scissors" id="scissors-button"></i>
-                </div>
-                <div id="scoreboard">
-                    <div id="player-window" class="window">
-                        <i class="fa-solid fa-user" id="player-icon"></i>
-                        <div id="player-score-message" class="window score-window">Player Score: 0</div>
-                    </div>
-                    <div id="results" class="window competitor window">
-                        <div>Last Round Result:</div>
-                        <div id="matchup">
-                            <div>
-                                <p id="last-round-result"></p>
-                            </div>
-                            <div id="cards-played">
-                                <i id="player-last-played"></i>
-                                <i id="computer-last-played"></i>
-                            </div>
+                <div id="scoreboard" class="invisible">
+                        <p>Last Round Result:</p>
+                        <p id="last-round-result"></p>
+                        <div id="cards-played">
+                            <i id="player-last-played"></i>
+                            <i id="cpu-last-played"></i>
                         </div>
                     </div>
-                    <div id="computer-window" class="window competitor window">
-                        <i class="fa-solid fa-robot" id="computer-icon"></i>
-                        <div id="computer-score-message" class="window score-window">Computer Score: 0</div>
+                </div>
+                <div id="game-over-message" class="invisible">
+                    <h2>Game Over!</h2>
+                    <p id="final-result"></p>
+                    <button id="restart-button">Restart Game</button>
+                </div>
+            <div id="match-window" class="invisible">
+                <div id="player-window">
+                    <div class="info-panel">
+                        <div class="info-card player-info-card"> 
+                            <i class="fa-solid fa-user" id="player-icon"></i>
+                            <span id="player-score-message">Player Score: 0</span>
+                        </div>    
+                    </div>
+                    <div id="player-buttons"  class="buttons">
+                        <div class="move-card player-move-card" id="rock-button">
+                            <i class="fa-solid fa-hand-back-fist"></i>
+                        </div>
+                        <div class="move-card player-move-card" id="paper-button">
+                            <i class="fa-solid fa-hand"></i>
+                        </div>
+                        <div class="move-card player-move-card" id="scissors-button">
+                            <i class="fa-solid fa-hand-scissors"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="cpu-window">
+                    <div id="cpu-buttons" class="buttons">
+                        <div class="move-card cpu-move-card" id="cpu-rock-button">
+                            <i class="fa-solid fa-hand-back-fist"></i>
+                        </div>
+                        <div class="move-card cpu-move-card" id="cpu-paper-button">
+                            <i class="fa-solid fa-hand"></i>
+                        </div>
+                        <div class="move-card cpu-move-card" id="cpu-scissors-button">
+                            <i class="fa-solid fa-hand-scissors"></i>
+                        </div>
+                    </div>
+                    <div class="info-panel">
+                        <div class="info-card cpu-info-card">
+                            <i class="fa-solid fa-robot" id="cpu-icon"></i>
+                            <span id="cpu-score-message">CPU Score: 0</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer id="footer" class="window">
+    <footer id="footer">
         <p>View on <a target="_blank" href="https://github.com/lewisgormanneale/rock-paper-scissors">GitHub</a></p>
     </footer>
     <script src="script.js"></script>

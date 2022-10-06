@@ -1,0 +1,238 @@
+body {
+    font-family: 'Gemunu Libre', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.window {
+    text-align: center;
+    border: 5px solid black;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    width: 100vw;
+    padding: 0 2vw;
+}
+
+#background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image:  linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);
+    background-size: 20px 35px;
+    background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+    width: 100vw;
+    height:85vh;
+    position:absolute;
+}
+
+/* start screen elements */
+
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height:80vh;
+    position:absolute;
+}
+
+#game-start-window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    width: 50vw;
+    height: 40vh;
+}
+
+#game-over-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height:50vh;
+    position:absolute;
+    font-size: x-large;
+}
+
+#start-button, #restart-button {
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#name-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+/* game screen elements */
+
+#game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 80vh;
+    position:absolute;
+}
+
+#match {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 40vh;
+}
+
+#player-window, #computer-window {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 40%;
+}
+
+#player-icon-and-score, #computer-icon-and-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#player-icon-and-score i {
+    font-size: 15vw;
+}
+
+#player-buttons {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    height: 30vh;
+}
+
+#computer-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 30vh;   
+}
+
+#rock-button, #paper-button, #scissors-button  {
+    transform: rotate(90deg);
+    height: 10vh;
+    font-size: 8vh;
+    background-color: black;
+    color: white;
+}
+
+#scissors-button {
+    transform: rotate(180deg);
+}
+
+#computer-rock-button, #computer-paper-button, #computer-scissors-button  {
+    transform: rotate(-90deg);
+    height: 10vh;
+    font-size: 10vh;
+    background-color: grey;
+    color: white;
+}
+
+#computer-scissors-button  {
+    transform: rotate(0deg);
+}
+
+#scoreboard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 30vh;
+    width: 80vw;
+}
+
+#matchup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+#cards-played {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 5vw;
+}
+
+#results {
+    width: 20vw;
+    height: 100%;
+}
+
+
+
+#player-icon, #computer-icon {
+    font-size: 100%;
+}
+
+.score-window {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
+/* footer */
+
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+@media screen and (max-width: 500px) {
+    #player-window, #computer-window {
+        flex-direction: column;
+    }
+    #computer-window {
+        flex-direction: column-reverse;
+    }
+}
