@@ -13,39 +13,22 @@
 </head>
 <body>
     <header id="header">
-        <button><i class="fa-regular fa-hand-spock"></i></button>
-        <h1>Rock, Paper, Scissors!</h1>
-        <button><i class="fa-solid fa-moon"></i></button>
+        <button id="spock-mode"><i class="fa-regular fa-hand-spock"></i></button>
+        <h1 id="title">Rock, Paper, Scissors!</h1>
+        <button id="dark-mode"><i class="fa-solid fa-moon"></i></button>
     </header>
     <main>
         <div id="game-screen">
-            <div id="message-window">
-                <div id="start-message">
-                    <p>First to score 5 points wins!</p>
-                    <label for="player-name">Enter Player Name (must be under 10 characters and start with a letter):</label>
-                    <input type="text" id="name-entry" name="player-name"></input>
-                    <button id="start-button">Start Game</button>
-                </div>
-                <div id="scoreboard" class="invisible">
-                        <p>Last Round Result:</p>
-                        <p id="last-round-result"></p>
-                        <div id="cards-played">
-                            <i id="player-last-played"></i>
-                            <i id="cpu-last-played"></i>
-                        </div>
-                    </div>
-                </div>
-                <div id="game-over-message" class="invisible">
-                    <h2>Game Over!</h2>
-                    <p id="final-result"></p>
-                    <button id="restart-button">Restart Game</button>
-                </div>
+            <div id="rules">
+                <h2>First to score 5 points wins!</h2>
+                <img src="images/basic-rules.png" id="rules-diagram">
+            </div>
             <div id="match-window" class="invisible">
                 <div id="player-window">
                     <div class="info-panel">
                         <div class="info-card player-info-card"> 
                             <i class="fa-solid fa-user" id="player-icon"></i>
-                            <span id="player-score-message">Player Score: 0</span>
+                            <h3 id="player-score-message">Player Score: 0</h3>
                         </div>    
                     </div>
                     <div id="player-buttons"  class="buttons">
@@ -75,11 +58,35 @@
                     <div class="info-panel">
                         <div class="info-card cpu-info-card">
                             <i class="fa-solid fa-robot" id="cpu-icon"></i>
-                            <span id="cpu-score-message">CPU Score: 0</span>
+                            <h3 id="cpu-score-message">CPU Score: 0</h3>
                         </div>
                     </div>
                 </div>
             </div>
+            <div id="message-window">
+                <div id="start-message">
+                    <h3>Enter Player Name (must be under 10 characters and start with a letter):</h3>
+                    <input type="text" id="name-entry" name="player-name"></input>
+                    <button id="start-button">Start Game</button>
+                </div>
+                <div id="scoreboard" class="invisible">
+                        <div class="previous-move-card player-move-card">
+                            <i id="player-last-played"></i>
+                        </div>
+                        <div id="text-score">
+                            <h3>Last Round Result:</h3>
+                            <h2 id="last-round-result"></h2>
+                        </div>
+                        <div class="previous-move-card cpu-move-card">
+                            <i id="cpu-last-played"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="game-over-message" class="invisible">
+                    <h2>Game Over!</h2>
+                    <h3 id="final-result"></h3>
+                    <button id="restart-button">Restart Game</button>
+                </div>
         </div>
     </main>
     <footer id="footer">

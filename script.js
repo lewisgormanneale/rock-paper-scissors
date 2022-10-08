@@ -13,6 +13,15 @@ let possibleChoices = ['rock', 'paper', 'scissors'];
 let playerSelection = possibleChoices[0];
 let cpuSelection = possibleChoices[0];
 
+const spockModeButton = document.querySelector('#spock-mode');
+spockModeButton.addEventListener('click', toggleSpockMode)
+let spockMode = false;
+
+const darkModeButton = document.querySelector('#dark-mode')
+let darkMode = false;
+
+let title = document.querySelector('#title');
+let rulesDiagram = document.querySelector('#rules-diagram')
 const gameStartWindow = document.querySelector('#game-start-window');
 const startMessage = document.querySelector('#start-message');
 const startButton = document.querySelector('#start-button');
@@ -209,3 +218,23 @@ function restartGame() {
     scoreboard.classList.remove('invisible');
     matchWindow.classList.remove('invisible');
 };
+
+function toggleSpockMode() {
+    spockMode = !spockMode;
+    if (spockMode === true) {
+        rulesDiagram.src = 'images/rpsls-rules.png'
+        title.textContent = 'Rock, Paper, Scissors, Lizard, Spock!'
+    } else if (spockMode === false) {
+        title.textContent = 'Rock, Paper, Scissors!'
+        rulesDiagram.src = 'images/basic-rules.png'
+    };
+}
+
+function toggleDarkMode() {
+    darkMode = !darkMode;
+    if (darkMode === true) {
+        
+    } else if (darkMode === false) {
+        
+    };
+}
