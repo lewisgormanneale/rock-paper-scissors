@@ -13,15 +13,16 @@
 </head>
 <body>
     <header id="header">
-        <button id="spock-mode"><i class="fa-regular fa-hand-spock"></i></button>
+        <button id="spock-mode" class="invisible"><i class="fa-regular fa-hand-spock"></i></button>
         <h1 id="title">Rock, Paper, Scissors!</h1>
-        <button id="dark-mode"><i class="fa-solid fa-moon"></i></button>
+        <button id="dark-mode" class="invisible"><i class="fa-solid fa-moon"></i></button>
     </header>
     <main>
         <div id="game-screen">
             <div id="rules">
                 <h2>First to score 5 points wins!</h2>
                 <img src="images/basic-rules.png" id="rules-diagram">
+                <h3>Enter Player Name (must be under 10 characters and start with a letter):</h3>
             </div>
             <div id="match-window" class="invisible">
                 <div id="player-window">
@@ -63,37 +64,44 @@
                     </div>
                 </div>
             </div>
-            <div id="message-window">
-                <div id="start-message">
-                    <h3>Enter Player Name (must be under 10 characters and start with a letter):</h3>
-                    <input type="text" id="name-entry" name="player-name"></input>
-                    <button id="start-button">Start Game</button>
-                </div>
-                <div id="scoreboard" class="invisible">
-                        <div class="previous-move-card player-move-card">
-                            <i id="player-last-played"></i>
-                        </div>
-                        <div id="text-score">
-                            <h3>Last Round Result:</h3>
-                            <h2 id="last-round-result"></h2>
-                        </div>
-                        <div class="previous-move-card cpu-move-card">
-                            <i id="cpu-last-played"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div id="game-over-screen" class="invisible">
                 <div id="main-game-over-message">
                     <h2>Game Over!</h2>
                     <h3 id="final-result"></h3>
+                </div> 
+            </div>
+            <div id="message-window">
+                <div id="start-message">
+                    <input type="text" id="name-entry" name="player-name"></input>
+                    <button id="start-button">Start Game</button>
                 </div>
-                <button id="restart-button">Restart Game</button>
+                <div id="scoreboard" class="invisible">
+                    <div class="scoreboard-segment" id="player-scoreboard-segment">
+                        <div class="previous-move-card player-move-card">
+                            <i id="player-last-played"></i>
+                        </div>
+                    </div>
+                    <div class="scoreboard-segment" id="text-scoreboard-segment">
+                        <div id="text-score">
+                            <h3>Last Round Result:</h3>
+                            <h2 id="last-round-result"></h2>
+                        </div>
+                    </div>
+                    <div class="scoreboard-segment" id="cpu-scoreboard-segment">
+                        <div class="previous-move-card cpu-move-card">
+                            <i id="cpu-last-played"></i>
+                        </div>
+                    </div>  
+                </div>
+                <div id="restart-section" class="invisible">
+                    <button id="restart-button">Restart Game</button>
+                </div>
             </div>
         </div>
     </main>
     <footer id="footer">
         <p>View on <a target="_blank" href="https://github.com/lewisgormanneale/rock-paper-scissors">GitHub</a></p>
+        <p><a href="https://www.vecteezy.com/free-vector/rock">Rock Vectors by Vecteezy</a></p>
     </footer>
     <script src="script.js"></script>
 </body>

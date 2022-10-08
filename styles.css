@@ -13,28 +13,27 @@ body {
     display: none !important;
 }
 
-.dark-mode {
-    background-color: black;
+button {
+    padding: 10px 20px;
+    background-color: rgb(136, 0, 136);
+    border: 1px solid rgb(255, 255, 255);
     color: white;
-}
+  }
 
 /* header elements */ 
 
 #header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     height: 10vh;
     width: 100%;
     top: 0; 
     padding: 0 2vw;
-    background-color: black;
+    background-color: darkgreen;
+    border: 5px solid black;
     color: white;
-}
-
-#spock-mode, #dark-mode {
-    color: black;
 }
 
 /* main screen setup */ 
@@ -46,21 +45,32 @@ body {
     align-items: center;
     width: 100%;
     height: 85vh;
+    color: black;
+    text-align: center;
+    background-color: rgb(18, 18, 18);
+    background-color: #ae242c;
+    opacity: 0.8;
+    background-color: #ae242c;
+    opacity: 1;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #ae242c 16px ), repeating-linear-gradient( #3446b355, #3446b3 );
 }
 
 #rules {
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    font-size: 1.5em;
     height: 65vh;
     width: 100%;
+    color: white;
 }
 
 #rules-diagram {
     width: auto;
     height: 40vh;
+    border: 5px solid black;
 }
 
 /* game message module */
@@ -75,10 +85,14 @@ body {
     height: 20vh;
     bottom: 0vh;
     width: 100%;
-    background-color: grey;
+    color: white;
+    background-color: darkgreen;
+    
 }
 
-#start-message, #scoreboard, #game-over-message {
+/* start game */
+
+#start-message {
     position:absolute;
     display: flex;
     flex-direction: column;
@@ -88,30 +102,16 @@ body {
     bottom: 0vh;
     height: 20vh;
     z-index: 2;
-}
-
-#scoreboard {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    border: 5px solid black;
 }
 
 input {
     vertical-align: middle;
     margin: 5px 10px 5px 0;
     padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-  }
-  
-/* Style the submit button */
-
-button {
-    padding: 10px 20px;
-    background-color: green;
-    border: 1px solid darkgreen;
-    color: white;
-  }
+    background-color: white;
+    border: 1px solid rgb(0, 0, 0);
+}
 
 /* match elements */
 
@@ -128,22 +128,19 @@ button {
 #player-window, #cpu-window {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
 }
 
 #player-window{
     width: 67%;
+    background-color: #3446b3;
 }
 
 #cpu-window {
     width: 33%;
-    background-color: #e5e5f7;
-    opacity: 1;
-    background-image:  linear-gradient(#626262 2px, transparent 2px), linear-gradient(90deg, #626262 2px, transparent 2px), linear-gradient(#626262 1px, transparent 1px), linear-gradient(90deg, #626262 1px, #e5e5f7 1px);
-    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
-    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+    background-color: #ae242c;
 }
 
 .info-panel {
@@ -152,7 +149,7 @@ button {
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 50%;
+    width: 33%;
 }
 
 .info-card {
@@ -161,21 +158,26 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: 10%;
-    padding: 10%;
+    padding: 20%;
+    height: 20vh;
+    margin: auto 20px;
 }
 
 .player-info-card {
     background-color: blue;
-    color: white;
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
 }
 
 .cpu-info-card {
     background-color: red;
     color: black;
+    border: 2px solid black;
+    
 }
 
 #player-icon, #cpu-icon {
-    font-size: 10vh;
+    font-size: 3em;
 }
 
 /* move cards */
@@ -185,6 +187,14 @@ button {
     flex-direction: column;
     justify-content: space-evenly;
     height: 100%;
+    width:67%;
+}
+
+#player-buttons {
+    right: 0;
+}
+
+#cpu-buttons {
     width:50%;
 }
 
@@ -202,14 +212,17 @@ button {
 .previous-move-card {
     align-items: center;
     justify-content: center;
-    width: 5vw;
-    font-size: 2em;
+    width: 15vw;
+    font-size: 1rem;
     text-align: center;
 }
 
 .player-move-card {
-    background-color: blue;
-    color: white;
+    background-color: whitesmoke;
+    color: blue;
+    border-top: 3px solid blue;
+    border-left: 3px solid blue;
+    border-bottom: 3px solid blue;
 }
 
 #player-buttons .player-move-card:hover {
@@ -219,6 +232,9 @@ button {
 .cpu-move-card {
     background-color: black;
     color: red;
+    border-top: 3px solid red;
+    border-right: 3px solid red;
+    border-bottom: 3px solid red;
 }
 
 .player-rock-icon, .player-paper-icon {
@@ -234,13 +250,54 @@ button {
     transform: rotate(-90deg) scale(-1, 1);
 }
 
-.previous-move-card {
-    width: 10%;
-    height: 80%;
-    font-size: 10vh;
-    text-align: center;
+/* scoreboard */
+
+#scoreboard {
+    display: flex;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    bottom: 0vh;
+    height: 20vh;
+    z-index: 2;
 }
 
+.scoreboard-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#text-scoreboard-segment {
+    width: 50%;
+    height: 100%;
+    background-color: darkgreen;
+    border: 5px solid black;
+}
+
+#player-scoreboard-segment {
+    width: 25%;
+    height: 100%;
+    background-color: #3446b3;
+    
+}
+
+#cpu-scoreboard-segment {
+    width: 25%;
+    height: 100%;
+    background-color: #ae242c;
+}
+
+.previous-move-card {
+    width: 100%;
+    height: 10vh;
+    font-size: 3em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Game Over */
 
@@ -253,6 +310,33 @@ button {
     width: 100%;
     height: 70vh;
     z-index: 2;
+    color: white;
+    
+}
+
+#main-game-over-message {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 65vh;
+    z-index: 2;
+    color: white;
+}
+
+#restart-section {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+    bottom: 0vh;
+    color: white;
+    border: 5px solid black;   
 }
 
 /* footer */
@@ -261,13 +345,18 @@ button {
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+   padding: 0 20px;
     height: 5vh;
     width: 100%;
     left: 0;
     bottom: 0;
-    background-color: black;
+    background-color: rgb(18, 18, 18);
     color: white;
+}
+
+a {
+    color: lightblue;
 }
 
 @media screen and (max-width: 400px) {

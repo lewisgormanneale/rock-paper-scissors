@@ -18,7 +18,7 @@ spockModeButton.addEventListener('click', toggleSpockMode)
 let spockMode = false;
 
 const darkModeButton = document.querySelector('#dark-mode')
-let darkMode = false;
+let darkMode = true;
 
 const title = document.querySelector('#title');
 const rules = document.querySelector('#rules')
@@ -36,6 +36,7 @@ let playerLastPlayed = document.querySelector('#player-last-played');
 let cpuLastPlayed = document.querySelector('#cpu-last-played');
 
 const gameOverScreen = document.querySelector('#game-over-screen');
+const restartSection = document.querySelector('#restart-section');
 const restartButton = document.querySelector('#restart-button');
 const finalResult = document.querySelector('#final-result');
 
@@ -206,6 +207,7 @@ function gameOver(playerScore, cpuScore) {
     };
     matchWindow.classList.add('invisible');
     scoreboard.classList.add('invisible');
+    restartSection.classList.remove('invisible');
     gameOverScreen.classList.remove('invisible');
     finalResult.textContent = `Final Result: ${winningPlayer} wins!`;
 };
@@ -223,6 +225,7 @@ function restartGame() {
     scissorsButton.disabled = false;
     paperButton.disabled = false;
     gameOverScreen.classList.add('invisible');
+    restartSection.classList.add('invisible');
     scoreboard.classList.remove('invisible');
     matchWindow.classList.remove('invisible');
 };
