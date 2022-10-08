@@ -199,17 +199,15 @@ function disableButtons() {
 
 function gameOver(playerScore, cpuScore) {
     disableButtons();
-    let winningPlayer = '';
     if (playerScore > cpuScore) {
-        winningPlayer = `${userName}`;
+        finalResult.textContent = `Final Result: ${userName} wins!`;
     } else {
-        winningPlayer = 'CPU';
+        finalResult.textContent = `Final Result: CPU wins...`;
     };
     matchWindow.classList.add('invisible');
     scoreboard.classList.add('invisible');
     restartSection.classList.remove('invisible');
     gameOverScreen.classList.remove('invisible');
-    finalResult.textContent = `Final Result: ${winningPlayer} wins!`;
 };
 
 restartButton.addEventListener('click', restartGame);

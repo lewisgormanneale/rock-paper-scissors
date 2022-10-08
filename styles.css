@@ -31,7 +31,7 @@ button {
     width: 100%;
     top: 0; 
     padding: 0 2vw;
-    background-color: darkgreen;
+    background-color: rgb(11, 72, 11);
     border: 5px solid black;
     color: white;
 }
@@ -86,7 +86,7 @@ button {
     bottom: 0vh;
     width: 100%;
     color: white;
-    background-color: darkgreen;
+    background-color: rgb(11, 72, 11);
     
 }
 
@@ -160,6 +160,7 @@ input {
     border-radius: 10%;
     padding: 20%;
     height: 20vh;
+    width: 80%;
     margin: auto 20px;
 }
 
@@ -190,10 +191,6 @@ input {
     width:67%;
 }
 
-#player-buttons {
-    right: 0;
-}
-
 #cpu-buttons {
     width:50%;
 }
@@ -206,14 +203,6 @@ input {
     width: 100%;
     height: 20%;
     font-size: 3em;
-    text-align: center;
-}
-
-.previous-move-card {
-    align-items: center;
-    justify-content: center;
-    width: 15vw;
-    font-size: 1rem;
     text-align: center;
 }
 
@@ -273,7 +262,7 @@ input {
 #text-scoreboard-segment {
     width: 50%;
     height: 100%;
-    background-color: darkgreen;
+    background-color: rgb(11, 72, 11);
     border: 5px solid black;
 }
 
@@ -291,12 +280,15 @@ input {
 }
 
 .previous-move-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 10vh;
     font-size: 3em;
     text-align: center;
-    align-items: center;
-    justify-content: center;
+    background-color: rgb(127, 127, 127);
 }
 
 /* Game Over */
@@ -307,6 +299,7 @@ input {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    font-size: 3em;
     width: 100%;
     height: 70vh;
     z-index: 2;
@@ -359,14 +352,23 @@ a {
     color: lightblue;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 560px) {
     #player-window {
         flex-direction: column;
     }
-    #player-icon, #cpu-icon {
-        font-size: 10vh;
-    }
     #cpu-window {
         flex-direction: column-reverse;
+    }
+    #player-icon, #cpu-icon {
+        font-size: 6vh;
+    }
+    .info-panel {
+        width: 100%;
+    }
+    .buttons {
+        width: 100%;
+    }
+    #cpu-buttons {
+        width: 100%;
     }
 }
