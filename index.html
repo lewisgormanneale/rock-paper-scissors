@@ -33,26 +33,26 @@
                     </div>
                     <div id="player-buttons"  class="buttons">
                         <div class="move-card player-move-card" id="rock-button">
-                            <i class="fa-solid fa-hand-back-fist"></i>
+                            <i class="fa-solid fa-hand-back-fist player-rock-icon"></i>
                         </div>
                         <div class="move-card player-move-card" id="paper-button">
-                            <i class="fa-solid fa-hand"></i>
+                            <i class="fa-solid fa-hand player-paper-icon"></i>
                         </div>
                         <div class="move-card player-move-card" id="scissors-button">
-                            <i class="fa-solid fa-hand-scissors"></i>
+                            <i class="fa-solid fa-hand-scissors player-scissors-icon"></i>
                         </div>
                     </div>
                 </div>
                 <div id="cpu-window">
                     <div id="cpu-buttons" class="buttons">
                         <div class="move-card cpu-move-card" id="cpu-rock-button">
-                            <i class="fa-solid fa-hand-back-fist"></i>
+                            <i class="fa-solid fa-hand-back-fist cpu-rock-icon"></i>
                         </div>
                         <div class="move-card cpu-move-card" id="cpu-paper-button">
-                            <i class="fa-solid fa-hand"></i>
+                            <i class="fa-solid fa-hand cpu-paper-icon"></i>
                         </div>
                         <div class="move-card cpu-move-card" id="cpu-scissors-button">
-                            <i class="fa-solid fa-hand-scissors"></i>
+                            <i class="fa-solid fa-hand-scissors cpu-scissors-icon"></i>
                         </div>
                     </div>
                     <div class="info-panel">
@@ -82,11 +82,14 @@
                         </div>
                     </div>
                 </div>
-                <div id="game-over-message" class="invisible">
+            </div>
+            <div id="game-over-screen" class="invisible">
+                <div id="main-game-over-message">
                     <h2>Game Over!</h2>
                     <h3 id="final-result"></h3>
-                    <button id="restart-button">Restart Game</button>
                 </div>
+                <button id="restart-button">Restart Game</button>
+            </div>
         </div>
     </main>
     <footer id="footer">

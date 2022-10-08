@@ -20,8 +20,9 @@ let spockMode = false;
 const darkModeButton = document.querySelector('#dark-mode')
 let darkMode = false;
 
-let title = document.querySelector('#title');
-let rulesDiagram = document.querySelector('#rules-diagram')
+const title = document.querySelector('#title');
+const rules = document.querySelector('#rules')
+const rulesDiagram = document.querySelector('#rules-diagram')
 const gameStartWindow = document.querySelector('#game-start-window');
 const startMessage = document.querySelector('#start-message');
 const startButton = document.querySelector('#start-button');
@@ -34,7 +35,7 @@ let lastRoundResult = document.querySelector('#last-round-result');
 let playerLastPlayed = document.querySelector('#player-last-played');
 let cpuLastPlayed = document.querySelector('#cpu-last-played');
 
-const gameOverMessage = document.querySelector('#game-over-message');
+const gameOverScreen = document.querySelector('#game-over-screen');
 const restartButton = document.querySelector('#restart-button');
 const finalResult = document.querySelector('#final-result');
 
@@ -124,27 +125,33 @@ function roundResultMessage(roundResult, playerSelection, cpuSelection) {
         playerLastPlayed.removeAttribute('class');
         playerLastPlayed.classList.add('fa-solid');
         playerLastPlayed.classList.add('fa-hand-back-fist');
+        playerLastPlayed.classList.add('player-rock-icon');
     } else if (playerSelection === possibleChoices[1]) {
         playerLastPlayed.removeAttribute('class');
         playerLastPlayed.classList.add('fa-solid');
         playerLastPlayed.classList.add('fa-hand');
+        playerLastPlayed.classList.add('player-paper-icon');
     } else if (playerSelection === possibleChoices[2]) {
         playerLastPlayed.removeAttribute('class');
         playerLastPlayed.classList.add('fa-solid');
         playerLastPlayed.classList.add('fa-hand-scissors');
+        playerLastPlayed.classList.add('player-scissors-icon');
     };
     if (cpuSelection === possibleChoices[0]) {
         cpuLastPlayed.removeAttribute('class');
         cpuLastPlayed.classList.add('fa-solid');
         cpuLastPlayed.classList.add('fa-hand-back-fist');
+        cpuLastPlayed.classList.add('cpu-rock-icon');
     } else if (cpuSelection === possibleChoices[1]) {
         cpuLastPlayed.removeAttribute('class');
         cpuLastPlayed.classList.add('fa-solid');
         cpuLastPlayed.classList.add('fa-hand');
+        cpuLastPlayed.classList.add('cpu-paper-icon');
     } else if (cpuSelection === possibleChoices[2]) {
         cpuLastPlayed.removeAttribute('class');
         cpuLastPlayed.classList.add('fa-solid');
         cpuLastPlayed.classList.add('fa-hand-scissors');
+        cpuLastPlayed.classList.add('cpu-scissors-icon');
     };
     if (declaredRoundResult === 'win') {
         let capitalisedPlayerSelection = playerSelection[0].toUpperCase() + playerSelection.substring(1);
@@ -171,6 +178,7 @@ function startGame() {
         lastRoundResult.textContent = '';
         enableButtons();
         startMessage.classList.add('invisible');
+        rules.classList.add('invisible');
         matchWindow.classList.remove('invisible');
         scoreboard.classList.remove('invisible');
     }
@@ -198,7 +206,7 @@ function gameOver(playerScore, cpuScore) {
     };
     matchWindow.classList.add('invisible');
     scoreboard.classList.add('invisible');
-    gameOverMessage.classList.remove('invisible');
+    gameOverScreen.classList.remove('invisible');
     finalResult.textContent = `Final Result: ${winningPlayer} wins!`;
 };
 
@@ -214,7 +222,7 @@ function restartGame() {
     rockButton.disabled = false;
     scissorsButton.disabled = false;
     paperButton.disabled = false;
-    gameOverMessage.classList.add('invisible');
+    gameOverScreen.classList.add('invisible');
     scoreboard.classList.remove('invisible');
     matchWindow.classList.remove('invisible');
 };

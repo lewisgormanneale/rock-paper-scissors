@@ -24,6 +24,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
     height: 10vh;
     width: 100%;
     top: 0; 
@@ -103,11 +104,12 @@ input {
     border: 1px solid #ddd;
   }
   
-  /* Style the submit button */
+/* Style the submit button */
+
 button {
     padding: 10px 20px;
-    background-color: orangered;
-    border: 1px solid #ddd;
+    background-color: green;
+    border: 1px solid darkgreen;
     color: white;
   }
 
@@ -132,7 +134,6 @@ button {
 }
 
 #player-window{
-    background-color: white;
     width: 67%;
 }
 
@@ -164,12 +165,13 @@ button {
 }
 
 .player-info-card {
-    background-color: orange;
+    background-color: blue;
+    color: white;
 }
 
 .cpu-info-card {
-    background-color: darkblue;
-    color: white;
+    background-color: red;
+    color: black;
 }
 
 #player-icon, #cpu-icon {
@@ -193,7 +195,7 @@ button {
     justify-content: center;
     width: 100%;
     height: 20%;
-    font-size: 10vh;
+    font-size: 3em;
     text-align: center;
 }
 
@@ -201,26 +203,35 @@ button {
     align-items: center;
     justify-content: center;
     width: 5vw;
-
-    font-size: 10vh;
+    font-size: 2em;
     text-align: center;
 }
 
 .player-move-card {
-    background-color: orange;
+    background-color: blue;
+    color: white;
+}
+
+#player-buttons .player-move-card:hover {
+    background-color: darkblue;
 }
 
 .cpu-move-card {
     background-color: black;
-    color: grey;
+    color: red;
 }
 
-.player-move-card i {
+.player-rock-icon, .player-paper-icon {
     transform: rotate(90deg);
 }
 
-.cpu-move-card i {
-    transform: rotate(-90deg);
+.player-scissors-icon {
+    transform: scale(-1, 1);
+    
+}
+
+.cpu-rock-icon, .cpu-paper-icon {
+    transform: rotate(-90deg) scale(-1, 1);
 }
 
 .previous-move-card {
@@ -228,6 +239,20 @@ button {
     height: 80%;
     font-size: 10vh;
     text-align: center;
+}
+
+
+/* Game Over */
+
+#game-over-screen {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    z-index: 2;
 }
 
 /* footer */
